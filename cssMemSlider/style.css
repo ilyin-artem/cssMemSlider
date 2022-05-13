@@ -1,20 +1,65 @@
-#slide1:checked ~ .slide1 {
-    --show-slide: block;
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
 }
-#slide2:checked ~ .slide2 {
-    --show-slide: block;
+.container {
+    display: grid;
+    grid-template-areas:
+        'slide slide'
+        'title controls';
+
+    /* grid-template-columns: repeat(3, 20px); */
+    /* grid-template-rows: 1fr 50px; */
 }
-#slide3:checked ~ .slide3 {
-    --show-slide: block;
-}
-#slide4:checked ~ .slide4 {
-    --show-slide: block;
+.slider {
+    grid-area: slide;
+
+    /* grid-column-start: span 4; */
+    order: 0;
 }
 
-.slides {
+.slides,
+.slider__title > p {
     display: var(--show-slide, none);
 }
 
-.input {
-    position: absolute;
+#slide1:checked ~ .slider > .slide1,
+#slide1:checked ~ .slider__title > .title1 {
+    --show-slide: block;
+}
+
+#slide2:checked ~ .slider > .slide2,
+#slide2:checked ~ .slider__title > .title2 {
+    --show-slide: block;
+}
+#slide3:checked ~ .slider > .slide3,
+#slide3:checked ~ .slider__title > .title3 {
+    --show-slide: block;
+}
+#slide4:checked ~ .slider > .slide4,
+#slide4:checked ~ .slider__title > .title4 {
+    --show-slide: block;
+}
+
+input {
+    display: none;
+}
+.controls {
+    grid-area: controls;
+}
+.slider__title {
+    grid-area: title;
+}
+.controls label {
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    margin-left: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
