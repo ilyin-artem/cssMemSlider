@@ -1,25 +1,20 @@
-.slide1 {
-    display: none;
-}
-.slide2 {
-    display: none;
-}
-.slide3 {
-    display: none;
-}
-.slide4 {
-    display: none;
-}
-
 #slide1:checked ~ .slide1 {
-    display: block;
+    --show-slide: block;
 }
 #slide2:checked ~ .slide2 {
-    display: block;
+    --show-slide: block;
 }
 #slide3:checked ~ .slide3 {
-    display: block;
+    --show-slide: block;
 }
 #slide4:checked ~ .slide4 {
-    display: block;
+    --show-slide: block;
+}
+
+.slides {
+    display: var(--show-slide, none);
+}
+
+.input {
+    position: absolute;
 }
