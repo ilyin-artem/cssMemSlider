@@ -8,6 +8,7 @@
 }
 .container {
     display: grid;
+    justify-items: center;
     grid-template-areas:
         'slide slide'
         'title controls';
@@ -44,17 +45,22 @@
 #slide4:checked ~ .slider__title > .title4 {
     --show-slide: block;
 }
-
+#slide1:checked ~ .slider__controls .dot1 span {
+    background-color: #717171;
+}
 input {
     display: none;
 }
-.controls {
+.slider__controls {
     grid-area: controls;
+    align-self: center;
+    display: flex;
 }
 .slider__title {
     grid-area: title;
+    align-self: center;
 }
-.controls label {
+.slider__controls label {
     width: 3rem;
     height: 3rem;
     cursor: pointer;
@@ -62,4 +68,17 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.slider__controls label span {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.slider__controls label span:hover {
+    background-color: #717171;
 }
