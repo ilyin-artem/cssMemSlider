@@ -4,11 +4,13 @@
     padding: 0;
     margin: 0;
     -webkit-box-sizing: inherit;
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 .container {
+    max-width: 45rem;
+    margin: 0 auto;
     display: grid;
-    justify-items: center;
+
     grid-template-areas:
         'slide slide'
         'title controls';
@@ -18,14 +20,23 @@
 }
 .slider {
     grid-area: slide;
-
+    border-radius: 50%;
     /* grid-column-start: span 4; */
     order: 0;
 }
 
 .slides,
 .slider__title > p {
+    -webkit-animation: fadeIn 2.5s;
+    animation: fadeIn 2.5s;
     display: var(--show-slide, none);
+}
+.slides img {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    max-width: 45rem;
 }
 
 #slide1:checked ~ .slider > .slide1,
@@ -36,16 +47,30 @@
 #slide2:checked ~ .slider > .slide2,
 #slide2:checked ~ .slider__title > .title2 {
     --show-slide: block;
+    opacity: 1;
+    height: auto;
 }
 #slide3:checked ~ .slider > .slide3,
 #slide3:checked ~ .slider__title > .title3 {
+    opacity: 1;
+    height: auto;
     --show-slide: block;
 }
 #slide4:checked ~ .slider > .slide4,
 #slide4:checked ~ .slider__title > .title4 {
+    opacity: 1;
     --show-slide: block;
 }
-#slide1:checked ~ .slider__controls .dot1 span {
+#slide1:checked ~ .slider__controls .dot1 {
+    background-color: #717171;
+}
+#slide2:checked ~ .slider__controls .dot2 {
+    background-color: #717171;
+}
+#slide3:checked ~ .slider__controls .dot3 {
+    background-color: #717171;
+}
+#slide4:checked ~ .slider__controls .dot4 {
     background-color: #717171;
 }
 input {
@@ -55,16 +80,20 @@ input {
     grid-area: controls;
     align-self: center;
     display: flex;
+    justify-content: flex-end;
 }
 .slider__title {
     grid-area: title;
     align-self: center;
+    padding-left: 25px;
+    font-size: 1.5rem;
 }
 .slider__controls label {
     width: 3rem;
     height: 3rem;
     cursor: pointer;
     margin-left: 0.3rem;
+    padding-right: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -81,4 +110,24 @@ input {
 }
 .slider__controls label span:hover {
     background-color: #717171;
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 767px) {
 }
