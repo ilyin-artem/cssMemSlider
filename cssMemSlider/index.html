@@ -9,30 +9,47 @@
     </head>
     <body>
         <div class="container">
-            <div class="input">
-                <input type="radio" name="slide" id="slide1" checked />
-                <input type="radio" name="slide" id="slide2" />
-                <input type="radio" name="slide" id="slide3" />
-                <input type="radio" name="slide" id="slide4" />
+            <input type="radio" name="slide" id="slide1" checked />
+
+            <input type="radio" name="slide" id="slide2" />
+            <input type="radio" name="slide" id="slide3" />
+            <input type="radio" name="slide" id="slide4" />
+
+            <div class="slider">
                 <div class="slides slide1">
-                    <img src="http://unsplash.it/401?random" alt="" />
-                    <p>Slide1</p>
+                    <img
+                        src="./img/junior_programming.jpg"
+                        alt="Junior программист"
+                    />
                 </div>
-
                 <div class="slides slide2">
-                    <img src="http://unsplash.it/402?random" alt="" />
-                    <p>Slide2</p>
+                    <img src="./img/clean_project.jpg" alt="Чистый код" />
                 </div>
-
                 <div class="slides slide3">
-                    <img src="http://unsplash.it/403?random" alt="" />
-                    <p>Slide3</p>
+                    <img
+                        src="./img/user_expirience.jpg"
+                        alt="User expirience"
+                    />
                 </div>
-
                 <div class="slides slide4">
-                    <img src="http://unsplash.it/404?random" alt="" />
-                    <p>Slide4</p>
+                    <img src="./img/hide_and_seek.jpg" alt="Игра в прядки" />
                 </div>
+            </div>
+
+            <div class="slider__title">
+                <p class="title1">Junior программист</p>
+                <p class="title2">Чистый код</p>
+                <p class="title3">User expirience</p>
+                <p class="title4">Игра в прядки</p>
+            </div>
+            <div class="slider__controls">
+                <label for="slide1">
+                    <span class="dot1"></span>
+                </label>
+                <label for="slide2"><span class="dot2"></span></label>
+
+                <label for="slide3"><span class="dot3"></span></label>
+                <label for="slide4"><span class="dot4"></span></label>
             </div>
         </div>
     </body>
